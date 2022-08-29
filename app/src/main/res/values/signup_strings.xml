@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="signup_edittext_input_number_hint">Phone number</string>
+    <string name="signup_edittext_input_password_hint">Password</string>
+    <string name="signup_edittext_input_username_hint">User name</string>
+    <string name="signup_button_text">Sign Up</string>
+    <string name="signup_textView_go_to_login">If you have an account login</string>
+
+    // name edittext errors
+    <string name="signup_edittext_error_name_minimum">Name must contain at least 3 characters</string>
+    <string name="signup_edittext_error_name_maximum">Name must contain at max 10 characters</string>
+
+</resources>

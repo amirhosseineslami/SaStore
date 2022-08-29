@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="login_edittext_input_number_hint">Phone number</string>
+    <string name="login_edittext_input_password_hint">Password</string>
+    <string name="login_button_text">login</string>
+    <string name="login_textView_forgot_password_text">Forgot password?</string>
+    <string name="login_textView_do_not_have_an_account">Don\'t have an account?</string>
+    <string name="login_textView_do_not_have_an_account_signup">Sign up</string>
+
+    // edittext errors
+    <string name="login_edittext_number_error">Phone number is invalid</string>
+    <string name="login_edittext_number_error_space">Phone number can\'t contain space</string>
+    <string name="login_edittext_number_error_not_numeric">Phone number can\'t contain non Digit characters</string>
+    <string name="login_edittext_password_error_minimum_quantity">Password must contain at least 6 characters</string>
+    <string name="login_edittext_password_error_maximum_quantity">Password must contain maximum 16 characters</string>
+    <string name="login_edittext_password_error_space">Password can\'t contain space</string>
+</resources>

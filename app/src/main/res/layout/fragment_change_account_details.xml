@@ -1,0 +1,345 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="model"
+            type="com.example.sastore.model.AccountDetailModel" />
+        <variable
+            name="viewModel"
+            type="com.example.sastore.viewmodel.MainActivityViewModel" />
+        <variable
+            name="listener"
+            type="com.example.sastore.view.ChangeAccountDetailsFragment.ChangeAccountDetailsFragmentEventListener" />
+    </data>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/fragment_change_account_details_layout_padding">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/fragment_change_account_details_layout_padding">
+
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/fragment_change_account_details_information_top_textView"
+            android:textSize="@dimen/fragment_change_account_details_information_top_textSize"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout2"
+            android:layout_width="match_parent"
+            android:layout_height="500dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView">
+
+            <LinearLayout
+                android:id="@+id/linearLayout11"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="0dp"
+                android:orientation="horizontal"
+                android:padding="0dp"
+                app:layout_constraintBottom_toTopOf="@+id/linearLayout8"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/linearLayout10">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="@string/fragment_change_account_details_textView_replacement_number"
+                    android:textSize="@dimen/fragment_change_account_details_constant_textView_textSize" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/fragment_change_account_textInputLayout_replacement_phone_number"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="4dp"
+                    android:layout_weight="16">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/fragment_change_account_edittext_phone_number"
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:gravity="center"
+                        android:hint="@string/fragment_change_account_details_editText_phone_number_hint"
+                        android:inputType="phone"
+                        android:text="@={model.replacementNumber}"
+                        android:textSize="@dimen/signup_edittext_phoneNumber_text_size" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linearLayout6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="0dp"
+                android:orientation="horizontal"
+                android:padding="0dp"
+                app:layout_constraintBottom_toTopOf="@+id/linearLayout7"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="@string/fragment_change_account_details_textView_name"
+                    android:textSize="@dimen/fragment_change_account_details_constant_textView_textSize" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/fragment_change_account_textInputLayout_name"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="4dp"
+                    android:layout_weight="16">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/fragment_change_account_edittext_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:gravity="center"
+                        android:hint="@string/fragment_change_account_details_editText_name_hint"
+                        android:inputType="textPersonName"
+                        android:text="@={model.name}"
+                        android:textSize="@dimen/signup_edittext_phoneNumber_text_size" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linearLayout7"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="0dp"
+                android:orientation="horizontal"
+                android:padding="0dp"
+                app:layout_constraintBottom_toTopOf="@+id/linearLayout10"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/linearLayout6">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="@string/fragment_change_account_details_textView_address"
+                    android:textSize="@dimen/fragment_change_account_details_constant_textView_textSize" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/fragment_change_account_textInputLayout_address"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="4dp"
+                    android:layout_weight="16">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/fragment_change_account_edittext_address"
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:gravity="center"
+                        android:hint="@string/fragment_change_account_details_editText_address_hint"
+                        android:inputType="textPersonName"
+                        android:text="@={model.address}"
+                        android:textSize="@dimen/signup_edittext_phoneNumber_text_size" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linearLayout8"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="0dp"
+                android:orientation="horizontal"
+                android:padding="0dp"
+                app:layout_constraintBottom_toTopOf="@+id/linearLayout9"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/linearLayout11">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="@string/fragment_change_account_details_textView_password"
+                    android:textSize="@dimen/fragment_change_account_details_constant_textView_textSize" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/fragment_change_account_textInputLayout_password"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="4dp"
+                    android:layout_weight="16">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/fragment_change_account_edittext_password"
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:gravity="center"
+                        android:hint="@string/fragment_change_account_details_editText_password_hint"
+                        android:inputType="textPersonName"
+                        android:text="@={model.password}"
+                        android:textSize="@dimen/signup_edittext_phoneNumber_text_size" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linearLayout9"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="0dp"
+                android:orientation="horizontal"
+                android:padding="0dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/linearLayout8">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="@string/fragment_change_account_details_textView_new_password"
+                    android:textSize="@dimen/fragment_change_account_details_constant_textView_textSize" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/fragment_change_account_textInputLayout_new_password"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="4dp"
+                    android:layout_weight="16">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/fragment_change_account_edittext_new_password"
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:gravity="center"
+                        android:hint="@string/fragment_change_account_details_editText_new_password_hint"
+                        android:inputType="textPersonName"
+                        android:text="@={model.newPassword}"
+                        android:textSize="@dimen/signup_edittext_phoneNumber_text_size" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linearLayout10"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="0dp"
+                android:orientation="horizontal"
+                android:padding="0dp"
+                app:layout_constraintBottom_toTopOf="@+id/linearLayout11"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/linearLayout7">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="@string/fragment_change_account_details_textView_postal_code"
+                    android:textSize="@dimen/fragment_change_account_details_constant_textView_textSize" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/fragment_change_account_textInputLayout_postal_code"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="4dp"
+                    android:layout_weight="16">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/fragment_change_account_edittext_postal_code"
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:gravity="center"
+                        android:hint="@string/fragment_change_account_details_editText_postal_code_hint"
+                        android:inputType="textPersonName"
+                        android:text="@={model.postalCode}"
+                        android:textSize="@dimen/signup_edittext_phoneNumber_text_size" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+            </LinearLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <Button
+            android:id="@+id/fragment_change_account_button_submit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="60dp"
+            android:text="@string/fragment_change_account_details_button_submit"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/constraintLayout2"
+            app:layout_constraintVertical_bias="0.0"
+            android:onClick="@{(view)->listener.submitBtnListener(view,viewModel,model)}"/>
+
+        <pl.droidsonroids.gif.GifImageView
+            android:id="@+id/fragment_change_account_imageView_submit_loading"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:elevation="10dp"
+            android:onClick="@{(view)->listener.submitBtnListener(view,viewModel,model)}"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="@+id/fragment_change_account_button_submit"
+            app:layout_constraintEnd_toEndOf="@+id/fragment_change_account_button_submit"
+            app:layout_constraintStart_toStartOf="@+id/fragment_change_account_button_submit"
+            app:layout_constraintTop_toTopOf="@+id/fragment_change_account_button_submit"
+            tools:visibility="visible" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+    </ScrollView>
+
+</layout>

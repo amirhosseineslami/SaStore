@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="login_layout_padding">8dp</dimen>
+    <dimen name="login_edittext_phoneNumber_text_size">20sp</dimen>
+    <dimen name="login_edittext_password_text_size">20sp</dimen>
+
+</resources>

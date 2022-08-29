@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    // constant textView's texts
+    <string name="fragment_shopping_cart_textview_final_cost_text">The final Cost:</string>
+    <string name="fragment_shopping_cart_textview_currency_text">Tooman</string>
+
+    // constant textView's margin and padding
+    <dimen name="fragment_shopping_cart_textview_currency_margin_start">8dp</dimen>
+
+    // constant textView's textSizes
+    <dimen name="fragment_shopping_cart_textview_final_cost_textSize">16sp</dimen>
+    <dimen name="fragment_shopping_cart_textview_currency_textSize">16sp</dimen>
+
+
+    // purchase button
+    <string name="fragment_shopping_cart_button_purchase">Purchase</string>
+</resources>

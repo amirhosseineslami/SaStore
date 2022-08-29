@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    // textview
+    <dimen name="shpping_cart_item_textview_price_textSize">12sp</dimen>
+
+</resources>

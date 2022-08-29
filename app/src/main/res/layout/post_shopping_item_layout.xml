@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    >
+    <data>
+        <variable
+            name="model"
+            type="com.example.sastore.model.ShoppingPostModel" />
+    </data>
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardElevation="1dp"
+        android:layout_margin="@dimen/shopping_item_card_layout_margin">
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/shopping_item_layout_padding"
+    android:orientation="vertical"
+    >
+
+
+    <ImageView
+        android:id="@+id/imageView_shopping_post_item"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:srcCompat="@tools:sample/avatars"
+        android:layout_gravity="center_horizontal"
+        setImageResourceFromUrl="@{model.imageurl}"/>
+    <TextView
+        android:id="@+id/shopping_post_item_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/shopping_item_post_textView_name_margin_top"
+        android:textSize="@dimen/shopping_item_post_textView_name_textSize"
+        tools:text="name test"
+        android:text="@{model.name}"
+        />
+    <TextView
+        android:id="@+id/shopping_post_item_price"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/shopping_item_post_textView_price_margin_top"
+        android:gravity="end"
+        android:textSize="@dimen/shopping_item_post_textView_price_textSize"
+        tools:text="50900$"
+        android:text="@{model.price}"
+        />
+
+</LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    </layout>

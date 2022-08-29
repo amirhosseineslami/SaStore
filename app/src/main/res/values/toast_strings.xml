@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    // toasts
+    <string name="toast_not_connected_to_database">Connection failed!</string>
+    <string name="toast_wrong_password">This password is wrong!</string>
+    <string name="toast_login_succeed">You logged in successfully</string>
+    <string name="toast_not_successful_signing_up">Not successful to sign up, try again</string>
+    <string name="toast_signed_up_successfully">You signed up</string>
+    <string name="toast_is_processing">Processing, please wait…</string>
+
+// alerts
+    <string name="alert_no_account_exists">There isn\'t any account with this information</string>
+    <string name="alert_no_any_account_exists_button_text">Sign Up</string>
+    <string name="alert_this_account_already_is_created">This account already exists</string>
+    <string name="alert_button_this_account_already_is_created">Login</string>
+
+</resources>

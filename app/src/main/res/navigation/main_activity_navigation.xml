@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main_activity_navigation"
+    app:startDestination="@id/homeNavigationFragment">
+
+    <fragment
+        android:id="@+id/homeNavigationFragment"
+        android:name="com.example.sastore.view.HomeNavigationFragment"
+        android:label="HomeNavigationFragment" >
+        <action
+            android:id="@+id/action_homeNavigationFragment_to_postsItemDetailsFragment"
+            app:destination="@id/postsItemDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/shoppingCartNavigationFragment"
+        android:name="com.example.sastore.view.ShoppingCartNavigationFragment"
+        android:label="ShoppingCartNavigationFragment" />
+    <fragment
+        android:id="@+id/accountNavigationFragment"
+        android:name="com.example.sastore.view.AccountNavigationFragment"
+        android:label="AccountNavigationFragment" >
+        <action
+            android:id="@+id/action_accountNavigationFragment_to_changeAccountDetailsFragment"
+            app:destination="@id/changeAccountDetailsFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+    </fragment>
+    <fragment
+        android:id="@+id/postsItemDetailsFragment"
+        android:name="com.example.sastore.view.PostsItemDetailsFragment"
+        android:label="PostsItemDetailsFragment" >
+        <argument
+            android:name="name"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/changeAccountDetailsFragment"
+        android:name="com.example.sastore.view.ChangeAccountDetailsFragment"
+        android:label="ChangeAccountDetailsFragment" >
+        <argument
+            android:name="parameters"
+            app:argType="string[]" />
+    </fragment>
+</navigation>

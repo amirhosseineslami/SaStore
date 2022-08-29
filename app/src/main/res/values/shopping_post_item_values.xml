@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    // dimens
+    <dimen name="shopping_item_layout_padding">16dp</dimen>
+    <dimen name="shopping_item_card_layout_margin">8dp</dimen>
+
+    // name textview
+    <dimen name="shopping_item_post_textView_name_textSize">20sp</dimen>
+    <dimen name="shopping_item_post_textView_name_margin_top">16dp</dimen>
+
+    // price textview
+    <dimen name="shopping_item_post_textView_price_textSize">20sp</dimen>
+    <dimen name="shopping_item_post_textView_price_margin_top">8dp</dimen>
+
+
+    // strings
+</resources>

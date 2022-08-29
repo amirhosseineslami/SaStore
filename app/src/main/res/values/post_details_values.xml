@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="post_detail_textView_description_textSize">16sp</dimen>
+    <dimen name="post_detail_textView_price_textSize">20sp</dimen>
+    <dimen name="post_detail_scroll_view_padding">8dp</dimen>
+    <dimen name="post_detail_textView_padding">8dp</dimen>
+
+    //strings
+    <string name="post_detail_textView_price_text">Price:</string>
+    <string name="post_detail_button_text">Add to cart</string>
+</resources>

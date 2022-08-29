@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="signUpFragmentEventListener"
+            type="com.example.sastore.view.SignUpFragment.SignUpFragmentEventListener" />
+        <variable
+            name="model"
+            type="com.example.sastore.model.LoginOrSignUpModel" />
+        <variable
+            name="viewModel"
+            type="com.example.sastore.viewmodel.LoginOrSignUpViewModel" />
+    </data>
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="@dimen/signup_layout_padding">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="370dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/shopping_bags_log_in" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayout_signup_name"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="4dp"
+        android:gravity="center_horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/textInputLayout_signup_number"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/signup_input_username"
+            android:layout_width="390dp"
+            android:layout_height="60dp"
+            android:gravity="center"
+            android:hint="@string/signup_edittext_input_username_hint"
+            android:inputType="textPersonName"
+            android:text="@={model.name}"
+            android:textSize="@dimen/signup_edittext_phoneNumber_text_size" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayout_signup_number"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:layout_marginBottom="4dp"
+        android:gravity="center_horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/textInputLayout_signup_password"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayout_signup_name">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/signup_input_number"
+            android:layout_width="390dp"
+            android:layout_height="60dp"
+            android:gravity="center"
+            android:hint="@string/signup_edittext_input_number_hint"
+            android:inputType="phone"
+            android:text="@={model.number}"
+            android:textSize="@dimen/signup_edittext_phoneNumber_text_size" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayout_signup_password"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:gravity="center_horizontal"
+        app:endIconCheckable="true"
+        app:endIconDrawable="@android:drawable/ic_secure"
+        app:endIconMode="password_toggle"
+        app:errorIconDrawable="@null"
+        app:layout_constraintEnd_toEndOf="@+id/textInputLayout_signup_number"
+        app:layout_constraintStart_toStartOf="@+id/textInputLayout_signup_number"
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayout_signup_number"
+        app:passwordToggleEnabled="false">
+
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/signup_input_password"
+            android:layout_width="390dp"
+            android:layout_height="60dp"
+            android:gravity="center"
+            android:hint="@string/signup_edittext_input_password_hint"
+            android:inputType="textPassword"
+            android:text="@={model.password}"
+            android:textSize="@dimen/signup_edittext_password_text_size"
+            tools:layout_editor_absoluteX="8dp"
+            tools:layout_editor_absoluteY="1200dp" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/signup_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/signup_button_text"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:onClick="@{(view)->signUpFragmentEventListener.signUpBtnListener(view,viewModel,model)}"
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayout_signup_password" />
+
+    <TextView
+        android:id="@+id/textview_go_to_login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="60dp"
+        android:linksClickable="true"
+        android:onClick="@{signUpFragmentEventListener::goToLoginFragmentListener}"
+        android:text="@string/signup_textView_go_to_login"
+        android:textColor="@color/signup_textview_forgot_password"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/signup_button"
+        app:layout_constraintTop_toBottomOf="@+id/signup_button" />
+
+
+    <pl.droidsonroids.gif.GifImageView
+        android:id="@+id/imageView_signup_loading"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:elevation="10dp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/signup_button"
+        app:layout_constraintEnd_toEndOf="@+id/signup_button"
+        app:layout_constraintStart_toStartOf="@+id/signup_button"
+        app:layout_constraintTop_toTopOf="@+id/signup_button"
+        app:layout_constraintVertical_bias="0.0"
+        tools:visibility="visible" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
+
+    </layout>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    // layout
+    <dimen name="fragment_change_account_details_layout_padding">8dp</dimen>
+
+    <string name="fragment_change_account_details_information_top_textView">Fill or change the blanks and press the submit button. To save the editions it\'s necessary to fill the current password blank.</string>
+    <dimen name="fragment_change_account_details_information_top_textSize">20sp</dimen>
+
+    // editTexts hints
+    <string name="fragment_change_account_details_editText_name_hint">Put your name</string>
+    <string name="fragment_change_account_details_editText_password_hint">Put your password</string>
+    <string name="fragment_change_account_details_editText_new_password_hint">Optional</string>
+    <string name="fragment_change_account_details_editText_address_hint">Put your address</string>
+    <string name="fragment_change_account_details_editText_phone_number_hint">phone number</string>
+    <string name="fragment_change_account_details_editText_replacement_phone_number_hint">phone number</string>
+    <string name="fragment_change_account_details_editText_postal_code_hint">Put your postal code</string>
+
+    // constants textViews
+    <dimen name="fragment_change_account_details_constant_textView_textSize">16sp</dimen>
+    <string name="fragment_change_account_details_textView_name">User name:</string>
+    <string name="fragment_change_account_details_textView_phone_number">Phone number:</string>
+    <string name="fragment_change_account_details_textView_address">Address:</string>
+    <string name="fragment_change_account_details_textView_postal_code">Postal code:</string>
+    <string name="fragment_change_account_details_textView_replacement_number">Phone number:</string>
+    <string name="fragment_change_account_details_textView_password">Password:</string>
+    <string name="fragment_change_account_details_textView_new_password">New password:</string>
+
+    // buttons
+    <string name="fragment_change_account_details_button_submit">Submit</string>
+
+
+    // edittext errors
+    <string name="change_account_details_edittext_error_address_minimum">Address must be at least 5 characters</string>
+    <string name="change_account_details_edittext_error_address_maximum">Address must be at max 30 characters</string>
+    <string name="change_account_details_edittext_error_postal_code">Postal code is Invalid</string>
+
+
+    // toast and errors
+    <string name="change_account_details_error_incorrect_password">Current password is incorrect</string>
+    <string name="change_account_details_error_not_successful">Submitting is failed</string>
+    <string name="change_account_details_submit_successful">Successfully submitted</string>
+
+
+</resources>

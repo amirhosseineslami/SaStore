@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="fragment_account_layout_padding">8dp</dimen>
+
+    // textViews
+    <string name="fragment_account_top_textView_account_detail">Account details</string>
+    <dimen name="fragment_account_top_textView_account_detail_textSize">20sp</dimen>
+
+    // constants textViews texts
+    <string name="fragment_account_textview_username">name:</string>
+    <string name="fragment_account_textview_phone_number">Phone number:</string>
+    <string name="fragment_account_textview_address">Address:</string>
+    <string name="fragment_account_textview_postal_code">Postal code:</string>
+    <string name="fragment_account_textview_second_number">Replacement number:</string>
+
+    // buttons
+    <string name="fragment_account_button_edit_account_details">Edit</string>
+    <string name="fragment_account_button_recent_purchases">Recent purchases</string>
+
+
+    // input textViews color
+    <color name="fragment_account_user_inputs_textview_color">#292929</color>
+
+
+</resources>
