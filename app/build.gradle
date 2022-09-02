@@ -34,6 +34,7 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
+    buildToolsVersion '30.0.3'
 }
 
 dependencies {
@@ -103,4 +104,22 @@ dependencies {
 
     // coroutines
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.4")
+
+    // zibal
+    //implementation files('libs/zibalsdk.aar');
+    implementation 'androidx.appcompat:appcompat:1.5.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    implementation 'androidx.recyclerview:recyclerview:1.2.1'
+    implementation 'androidx.cardview:cardview:1.0.0'
+    implementation 'com.android.volley:volley:1.2.1'
+
+    // zarin pal
+    implementation 'com.zarinpal:payment-provider:0.5.4'
+    implementation 'com.zarinpal:payment-provider:0.5.4'
+    implementation 'com.zarinpal:mpg:0.5.4'
+    //implementation 'com.zarinpal:payment-provider-ktx:0.5.4'
+
+    // persian date
+    implementation 'com.github.samanzamani:PersianDate:1.5.4'
+
 }

@@ -60,4 +60,13 @@ interface Api {
         @Field("postalcode")postalCode:String?,
         @Field("newpassword")newPassword:String?
     ):Single<Int>
+
+    @FormUrlEncoded
+    @POST("Pay.php")
+    public fun pay (
+        @Field("refID")refID:String,
+        @Field("number")number: String,
+        @Field("price")price:String,
+        @Field("purchasedate")purchaseDate:String
+    ):Single<Int>
 }

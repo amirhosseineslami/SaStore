@@ -24,7 +24,7 @@ class ShoppingPostsListAdapter : RecyclerView.Adapter<ShoppingPostsListAdapter.H
                     Navigation.findNavController(it)
                         .navigate(HomeNavigationFragmentDirections
                             .actionHomeNavigationFragmentToPostsItemDetailsFragment(
-                        shoppingPostModelsList.get(position).name))
+                        shoppingPostModelsList[position].name))
                 }
             }
         }

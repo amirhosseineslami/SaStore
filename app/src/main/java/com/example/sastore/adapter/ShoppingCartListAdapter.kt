@@ -47,7 +47,7 @@ class ShoppingCartListAdapter(
                 mainActivityViewModel.setProductCount(it, shoppingCartItemList?.get(position)!!)
                 if (it==0) {
                     //shoppingCartItemList.remove(shoppingCartItemList[position])
-                    //notifyItemRemoved(position)
+                    notifyItemRemoved(position)
                 }
                 for (i in shoppingCartItemList.indices){
                     Log.i(TAG, shoppingCartItemList[i].name)

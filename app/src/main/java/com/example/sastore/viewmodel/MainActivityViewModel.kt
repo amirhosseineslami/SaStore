@@ -4,7 +4,6 @@ import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.example.sastore.adapter.ShoppingCartListAdapter
 import com.example.sastore.model.*
 import com.example.sastore.utils.Repository
 import io.reactivex.rxjava3.disposables.CompositeDisposable
@@ -16,6 +15,8 @@ class MainActivityViewModel : ViewModel() {
     private var shoppingCartItemLiveData = MutableLiveData<ArrayList<ShoppingCartItemModel>>()
     private var totalPriceLiveData = MutableLiveData<String>()
     private var compositeDisposable = CompositeDisposable()
+
+    public var isAnyNewProductRemovedOrAddedToTheShoppingCartList = false
     public fun getShoppingPosts(): LiveData<List<ShoppingPostModel>> {
         return Repository.getInstance().getShoppingPosts(compositeDisposable)
     }
@@ -40,11 +41,13 @@ class MainActivityViewModel : ViewModel() {
     public fun addProductToShoppingCartList(shoppingCartItemModel: ShoppingCartItemModel) {
         val productIndex = isProductExistInCartList(shoppingCartItemModel)
         if (productIndex == -1) {
+            isAnyNewProductRemovedOrAddedToTheShoppingCartList = true
             // adding new product to list
             shoppingCartItemList.add(shoppingCartItemModel)
             shoppingCartItemLiveData.value = shoppingCartItemList
             Log.i(TAG, "addProductToShoppingCartList: added number:${shoppingCartItemModel.numberOfProduct}")
         } else {
+            isAnyNewProductRemovedOrAddedToTheShoppingCartList = false
             // adding existed product
             //val newNumber = shoppingCartItemList[productIndex].numberOfProduct.toInt() + 1
             shoppingCartItemList[productIndex].numberOfProduct = (shoppingCartItemList[productIndex].numberOfProduct.toInt()+1).toString()
@@ -57,9 +60,11 @@ class MainActivityViewModel : ViewModel() {
     public fun setProductCount(count: Int, shoppingCartItemModel: ShoppingCartItemModel) {
         val position = isProductExistInCartList(shoppingCartItemModel)
         if (count == 0) {
+            isAnyNewProductRemovedOrAddedToTheShoppingCartList = true
             shoppingCartItemList.removeAt(position)
             shoppingCartItemLiveData.value = shoppingCartItemList
         } else {
+            isAnyNewProductRemovedOrAddedToTheShoppingCartList = false
             shoppingCartItemList[position].numberOfProduct = count.toString()
             shoppingCartItemLiveData.value = shoppingCartItemList
         }
@@ -95,6 +100,11 @@ class MainActivityViewModel : ViewModel() {
     public fun getTotalPriceLiveData():MutableLiveData<String> {
         return totalPriceLiveData
     }
+
+    public fun pay(refID:String,number: String,price:String,purchaseDate:String):MutableLiveData<Int>{
+        return Repository.getInstance().pay(refID, number, price, purchaseDate, compositeDisposable)
+    }
+
 
     override fun onCleared() {
         super.onCleared()

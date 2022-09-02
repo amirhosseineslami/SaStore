@@ -99,12 +99,15 @@ class ProductCounterView(private val viewContext: Context, private val attribute
     }
 
     fun setProductCountStr(text: String?) {
-        Log.i(TAG, "setProductCountStr: model given number of product : $text")
         val newNumber = text?.toInt()
         productCountLiveData.value = newNumber!!
         if (newNumber>1){
             removeBtn.setImageResource(R.drawable.ic_baseline_remove_circle_24)
         }
+    }
+
+    fun getProductCount(): Int? {
+       return productCountLiveData.value
     }
 
     override fun onClick(p0: View?) {

@@ -1,9 +1,11 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 
 buildscript {
+    //ext.zarinpalSdkVersion = ("0.5.4") //inform of Releases: https://github.com/ZarinPal/Android-SDK/releases
     repositories {
         google()
         mavenCentral()
+        maven { url 'https://jitpack.io' }
     }
     dependencies {
         classpath("androidx.navigation:navigation-safe-args-gradle-plugin:2.5.1")

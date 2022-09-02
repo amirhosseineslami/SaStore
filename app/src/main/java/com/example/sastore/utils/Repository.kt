@@ -242,4 +242,31 @@ class Repository {
         return liveData
     }
 
+    public fun pay(refID:String, number: String, price:String, purchaseDate:String,compositeDisposable: CompositeDisposable):MutableLiveData<Int>{
+        val liveData:MutableLiveData<Int> = MutableLiveData()
+        RetrofitInstance.getInstance()!!.pay(refID,number,price,purchaseDate)
+            .subscribeOn(Schedulers.io())
+            .observeOn(AndroidSchedulers.mainThread())
+            .subscribe(object :SingleObserver<Int>{
+                override fun onSubscribe(d: Disposable) {
+                    compositeDisposable.add(d)
+                }
+
+                override fun onSuccess(t: Int) {
+                    liveData.value = t
+                }
+
+                override fun onError(e: Throwable) {
+                    Log.e(TAG, "onError: ${e.message}", )
+                }
+            })
+
+        return liveData
+    }
+
+
+
+
+
+
 }
