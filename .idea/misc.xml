@@ -20,8 +20,14 @@
         <entry key="..\:/dev/SaStore/app/src/main/res/layout/post_shopping_item_layout.xml" value="0.1921875" />
         <entry key="..\:/dev/SaStore/app/src/main/res/layout/shopping_cart_item_layout.xml" value="0.25" />
         <entry key="..\:/dev/SaStore/app/src/main/res/menu/bottom_nav_menu.xml" value="0.12" />
-        <entry key="app/src/main/res/layout/activity_main.xml" value="0.25" />
-        <entry key="app/src/main/res/layout/fragment_nav_bottom_shopping_cart.xml" value="0.15904232578024796" />
+        <entry key="..\:/zpc/dev/workSpace/SaStore/app/src/main/res/drawable/product_counter_bg.xml" value="0.1035" />
+        <entry key="..\:/zpc/dev/workSpace/SaStore/app/src/main/res/layout/counter_good_quantitiy_layout.xml" value="0.5" />
+        <entry key="..\:/zpc/dev/workSpace/SaStore/app/src/main/res/layout/fragment_nav_bottom_account.xml" value="0.15775972637879435" />
+        <entry key="..\:/zpc/dev/workSpace/SaStore/app/src/main/res/layout/fragment_nav_bottom_home.xml" value="0.15775972637879435" />
+        <entry key="..\:/zpc/dev/workSpace/SaStore/app/src/main/res/layout/fragment_nav_bottom_shopping_cart.xml" value="0.15775972637879435" />
+        <entry key="..\:/zpc/dev/workSpace/SaStore/app/src/main/res/layout/fragment_posts_item_details.xml" value="0.15775972637879435" />
+        <entry key="..\:/zpc/dev/workSpace/SaStore/app/src/main/res/layout/post_shopping_item_layout.xml" value="0.15775972637879435" />
+        <entry key="..\:/zpc/dev/workSpace/SaStore/app/src/main/res/layout/shopping_cart_item_layout.xml" value="0.14921223354958293" />
       </map>
     </option>
   </component>

@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.example.sastore">
+    package="com.mintab.sastore">
     <uses-permission android:name="android.permission.INTERNET"/>
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
 
     <application
         android:allowBackup="true"
@@ -17,7 +19,7 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
-            android:name=".view.LogInOrSignUpActivity"
+            android:name="com.mintab.sastore.view.LogInOrSignUpActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -26,8 +28,9 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".view.MainActivity"
-            android:exported="true">
+            android:name="com.mintab.sastore.view.MainActivity"
+            android:exported="true"
+            android:configChanges="orientation|screenSize">
 
             <intent-filter>
                 <action android:name="android.intent.action.VIEW"/>
@@ -38,6 +41,14 @@
                 <data android:scheme="return" android:host="com.example.sastore"/>
             </intent-filter>
         </activity>
+
+
+        <!-- To use GalleryAcitvity you have to add two activities one includes for perticular Album -->
+        <activity android:name="com.dps.custom_file_picker.activities.GalleryActivity"
+            android:theme="@style/Theme.SaStore"/>
+
+        <activity android:name="com.dps.custom_file_picker.activities.AlbumsImagesActivity"
+            android:theme="@style/Theme.SaStore"/>
     </application>
 
 </manifest>

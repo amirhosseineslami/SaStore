@@ -3,7 +3,7 @@
 <data>
     <variable
         name="model"
-        type="com.example.sastore.model.ProductImagesModel" />
+        type="com.mintab.sastore.model.ProductImagesModel" />
 </data>
 <RelativeLayout
     android:layout_width="match_parent"

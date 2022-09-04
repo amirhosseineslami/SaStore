@@ -5,7 +5,7 @@
     <data>
         <variable
             name="model"
-            type="com.example.sastore.model.ShoppingCartItemModel" />
+            type="com.mintab.sastore.model.ShoppingCartItemModel" />
         <variable
             name="number"
             type="String" />
@@ -14,7 +14,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:cardElevation="1dp"
-        app:cardCornerRadius="4dp"
+        app:cardCornerRadius="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginLeft="16dp"
+        android:padding="4dp"
         >
 
 <androidx.constraintlayout.widget.ConstraintLayout
@@ -97,7 +102,7 @@
             />
 
 
-        <com.example.sastore.customview.ProductCounterView
+        <com.mintab.sastore.customview.ProductCounterView
             android:id="@+id/shopping_cart_item_product_counter"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

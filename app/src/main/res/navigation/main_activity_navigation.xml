@@ -6,7 +6,7 @@
 
     <fragment
         android:id="@+id/homeNavigationFragment"
-        android:name="com.example.sastore.view.HomeNavigationFragment"
+        android:name="com.mintab.sastore.view.HomeNavigationFragment"
         android:label="HomeNavigationFragment" >
         <action
             android:id="@+id/action_homeNavigationFragment_to_postsItemDetailsFragment"
@@ -14,11 +14,11 @@
     </fragment>
     <fragment
         android:id="@+id/shoppingCartNavigationFragment"
-        android:name="com.example.sastore.view.ShoppingCartNavigationFragment"
+        android:name="com.mintab.sastore.view.ShoppingCartNavigationFragment"
         android:label="ShoppingCartNavigationFragment" />
     <fragment
         android:id="@+id/accountNavigationFragment"
-        android:name="com.example.sastore.view.AccountNavigationFragment"
+        android:name="com.mintab.sastore.view.AccountNavigationFragment"
         android:label="AccountNavigationFragment" >
         <action
             android:id="@+id/action_accountNavigationFragment_to_changeAccountDetailsFragment"
@@ -30,7 +30,7 @@
     </fragment>
     <fragment
         android:id="@+id/postsItemDetailsFragment"
-        android:name="com.example.sastore.view.PostsItemDetailsFragment"
+        android:name="com.mintab.sastore.view.PostsItemDetailsFragment"
         android:label="PostsItemDetailsFragment" >
         <argument
             android:name="name"
@@ -38,7 +38,7 @@
     </fragment>
     <fragment
         android:id="@+id/changeAccountDetailsFragment"
-        android:name="com.example.sastore.view.ChangeAccountDetailsFragment"
+        android:name="com.mintab.sastore.view.ChangeAccountDetailsFragment"
         android:label="ChangeAccountDetailsFragment" >
         <argument
             android:name="parameters"

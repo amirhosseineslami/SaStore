@@ -6,13 +6,13 @@
     <data>
         <variable
             name="model"
-            type="com.example.sastore.model.AccountDetailModel" />
+            type="com.mintab.sastore.model.AccountDetailModel" />
         <variable
             name="viewModel"
-            type="com.example.sastore.viewmodel.MainActivityViewModel" />
+            type="com.mintab.sastore.viewmodel.MainActivityViewModel" />
         <variable
             name="listener"
-            type="com.example.sastore.view.ChangeAccountDetailsFragment.ChangeAccountDetailsFragmentEventListener" />
+            type="com.mintab.sastore.view.ChangeAccountDetailsFragment.ChangeAccountDetailsFragmentEventListener" />
     </data>
     <ScrollView
         android:layout_width="match_parent"

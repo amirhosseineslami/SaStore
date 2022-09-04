@@ -8,8 +8,9 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
 
-    //  app colors
-    <color name="colorPrimary">#b2ff59</color>
+    //  app colors<!--
+    <color name="colorPrimary">#b2ff59</color>-->
+    <color name="colorPrimary">#7ecb20</color>
     <color name="colorPrimaryVariant">#7ecb20</color>
     <color name="colorOnPrimary">@color/black</color>
     <!-- Secondary brand color. -->
@@ -18,9 +19,10 @@
     <color name="colorOnSecondary">#c8a600</color>
 
     // custom view
-    <color name="product_counter_bg_background_color">#FFFFFF</color>
-    <color name="product_counter_main_text">#081C00</color>
+    <color name="product_counter_bg_background_color">#5A5A5A</color>
+    <color name="product_counter_main_text">#A4FF80</color>
+
 
     // account fragment
-    <color name="account_fragment_text_view_color">#DD000000</color>
+    <color name="account_fragment_text_view_color">#D1D1D1</color>
 </resources>

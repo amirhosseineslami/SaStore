@@ -6,7 +6,7 @@
 
     <fragment
         android:id="@+id/loginFragment"
-        android:name="com.example.sastore.view.LoginFragment"
+        android:name="com.mintab.sastore.view.LoginFragment"
         android:label="LoginFragment" >
         <action
             android:id="@+id/action_loginFragment_to_signUpFragment"
@@ -18,7 +18,7 @@
     </fragment>
     <fragment
         android:id="@+id/signUpFragment"
-        android:name="com.example.sastore.view.SignUpFragment"
+        android:name="com.mintab.sastore.view.SignUpFragment"
         android:label="SignUpFragment" >
         <action
             android:id="@+id/action_signUpFragment_to_loginFragment"

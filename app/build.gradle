@@ -13,7 +13,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.example.sastore"
+        applicationId "com.mintab.sastore"
         minSdk 21
         targetSdk 32
         versionCode 1
@@ -117,9 +117,20 @@ dependencies {
     implementation 'com.zarinpal:payment-provider:0.5.4'
     implementation 'com.zarinpal:payment-provider:0.5.4'
     implementation 'com.zarinpal:mpg:0.5.4'
-    //implementation 'com.zarinpal:payment-provider-ktx:0.5.4'
+
 
     // persian date
     implementation 'com.github.samanzamani:PersianDate:1.5.4'
+
+    // picasso
+    implementation 'com.squareup.picasso:picasso:2.8'
+
+    // file picker
+    implementation "com.anggrayudi:storage:1.4.1"
+        implementation 'com.github.deepanshuDPS:AndroidFilePicker:1.0.1'
+
+
+
+
 
 }

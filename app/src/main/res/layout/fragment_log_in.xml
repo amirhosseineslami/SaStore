@@ -5,13 +5,13 @@
     <data>
         <variable
             name="loginFragmentEventListener"
-            type="com.example.sastore.view.LoginFragment.LoginFragmentEventListener" />
+            type="com.mintab.sastore.view.LoginFragment.LoginFragmentEventListener" />
         <variable
             name="model"
-            type="com.example.sastore.model.LoginOrSignUpModel" />
+            type="com.mintab.sastore.model.LoginOrSignUpModel" />
         <variable
             name="viewModel"
-            type="com.example.sastore.viewmodel.LoginOrSignUpViewModel" />
+            type="com.mintab.sastore.viewmodel.LoginOrSignUpViewModel" />
     </data>
 <ScrollView
     android:layout_width="match_parent"

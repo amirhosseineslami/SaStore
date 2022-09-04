@@ -6,13 +6,18 @@
     <data>
         <variable
             name="model"
-            type="com.example.sastore.model.ShoppingPostModel" />
+            type="com.mintab.sastore.model.ShoppingPostModel" />
     </data>
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:cardElevation="1dp"
-        android:layout_margin="@dimen/shopping_item_card_layout_margin">
+        android:layout_marginBottom="@dimen/shopping_item_card_layout_margin"
+        android:layout_marginTop="@dimen/shopping_item_card_layout_margin"
+        android:layout_marginRight="16dp"
+        android:layout_marginLeft="16dp"
+        app:cardCornerRadius="16dp"
+        >
 
 <LinearLayout
     android:layout_width="match_parent"
