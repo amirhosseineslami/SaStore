@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    // texts
+    <string name="fragment_navdrawer_settings_switch_biometric">Finger print security</string>
+
+// biometric
+    <string name="fragment_navdrawer_settings_toast_text_biometric_authenticate_failed">Authenticating is failed!</string>
+    <string name="fragment_navdrawer_settings_toast_text_biometric_authenticate_succeed">Authenticating succeed:)</string>
+    <string name="fragment_navdrawer_settings_toast_text_biometricinfo_title">Authentication</string>
+    <string name="fragment_navdrawer_settings_toast_text_biometricinfo_subtitle">Touch your fingerprint</string>
+    <string name="fragment_navdrawer_settings_toast_text_BIOMETRIC_ERROR_HW_UNAVAILABLE">Your Device\'s fingerprint sensor has problems</string>
+    <string name="fragment_navdrawer_settings_toast_text_BIOMETRIC_ERROR_NO_HARDWARE">Your Device doesn\'t have the fingerprint sensor</string>
+    <string name="fragment_navdrawer_settings_toast_text_BIOMETRIC_ERROR_NONE_ENROLLED">You should set fingerprint security in the settings</string>
+    <string name="fragment_navdrawer_settings_toast_text_BIOMETRIC_SUCCESS">Fingerprint enabled successfully</string>
+    <string name="fragment_navdrawer_settings_toast_text_BIOMETRIC_ERROR_SECURITY_UPDATE_REQUIRED">Security update required!</string>
+    <string name="fragment_navdrawer_settings_toast_text_BIOMETRIC_ERROR_UNSUPPORTED">This device doesn\'t support fingerprint</string>
+    <string name="fragment_navdrawer_settings_toast_text_BIOMETRIC_STATUS_UNKNOWN">There is a problem while using fingerprint</string>
+    <string name="fragment_navdrawer_settings_toast_text_BIOMETRIC_ERROR_CANCELED">Cancelled</string>
+    <string name="fragment_navdrawer_settings_toast_text_BIOMETRIC_ERROR_HW_NOT_PRESENT">Fingerprint Hardware is not presented</string>
+    <string name="fragment_navdrawer_settings_toast_text_BIOMETRIC_ERROR_LOCKOUT">Fingerprint lock out</string>
+    <string name="fragment_navdrawer_settings_toast_text_BIOMETRIC_ERROR_LOCKOUT_PERMANENT">Fingerprint lock out permanent</string>
+    <string name="fragment_navdrawer_settings_toast_text_BIOMETRIC_ERROR_NEGATIVE_BUTTON">Cancelled</string>
+    <string name="fragment_navdrawer_settings_toast_text_BIOMETRIC_ERROR_NO_DEVICE_CREDENTIAL">No device credential</string>
+    <string name="fragment_navdrawer_settings_toast_text_BIOMETRIC_ERROR_NO_SPACE">No space available</string>
+    <string name="fragment_navdrawer_settings_toast_text_BIOMETRIC_ERROR_TIMEOUT">Timeout error</string>
+    <string name="fragment_navdrawer_settings_toast_text_BIOMETRIC_ERROR_UNABLE_TO_PROCESS">Unable to process</string>
+    <string name="fragment_navdrawer_settings_toast_text_BIOMETRIC_ERROR_USER_CANCELED">Cancelled</string>
+    <string name="fragment_navdrawer_settings_toast_text_BIOMETRIC_ERROR_VENDOR">Vendor Error</string>
+    <string name="fragment_navdrawer_settings_logging_negative_button_text">Log out</string>
+    <string name="fragment_navdrawer_settings_setting_negative_button_text">Cancel</string>
+
+</resources>

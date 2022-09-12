@@ -5,30 +5,26 @@ import android.app.Activity
 import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
-import android.net.Uri
-import android.os.Build
 import android.os.Bundle
-import android.os.FileUtils
 import android.util.Log
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.view.*
+import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
+import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.core.graphics.drawable.toDrawable
-import androidx.core.net.toFile
 import androidx.databinding.DataBindingUtil
 import androidx.documentfile.provider.DocumentFile
+import androidx.drawerlayout.widget.DrawerLayout
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.Navigation
 import com.anggrayudi.storage.SimpleStorageHelper
 import com.anggrayudi.storage.file.getAbsolutePath
-import com.anggrayudi.storage.file.mimeType
 import com.anggrayudi.storage.file.toRawFile
 import com.bumptech.glide.Glide
 import com.dps.custom_file_picker.activities.DocumentsActivity
@@ -36,6 +32,7 @@ import com.dps.custom_file_picker.app_helper.AppConstants.FILES_PATH
 import com.dps.custom_file_picker.app_helper.CustomIntent.SELECTED_TYPES
 import com.dps.custom_file_picker.app_helper.MimeTypes.IMAGE_JPEG
 import com.dps.custom_file_picker.app_helper.MimeTypes.IMAGE_PNG
+import com.google.android.material.navigation.NavigationView
 import com.mintab.sastore.R
 import com.mintab.sastore.databinding.FragmentNavBottomAccountBinding
 import com.mintab.sastore.model.AccountDetailModel
@@ -46,10 +43,8 @@ import com.mintab.sastore.worker.FillTheNullArrayString
 import es.dmoral.toasty.Toasty
 import okhttp3.*
 import java.io.File
-import java.nio.file.Files
 import javax.net.ssl.SSLContext
 import javax.net.ssl.SSLEngine
-import kotlin.io.path.Path
 
 
 private const val TAG = "AccountNavigationFragme"
@@ -63,6 +58,11 @@ class AccountNavigationFragment : Fragment() {
     private val storageHelper = SimpleStorageHelper(this)
     private lateinit var accountProfilePictureImageView: ImageView
     private lateinit var listener: AccountNavigationFragmentEventListener
+    private lateinit var menuNavDrawerLayout: DrawerLayout
+    private lateinit var menuNavView: NavigationView
+    private lateinit var menuNavDrawerBtn: ImageButton
+    private lateinit var navViewConstraintLayout:ConstraintLayout
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -82,6 +82,22 @@ class AccountNavigationFragment : Fragment() {
         mainActivityViewModel =
             ViewModelProvider(requireActivity())[MainActivityViewModel::class.java]
 
+        // menu
+        menuNavDrawerLayout = binding.fragmentAccountNavDrawerLayout
+        menuNavDrawerLayout.setOnClickListener { Log.i(TAG, "onViewCreated: adfa") }
+        menuNavDrawerBtn = binding.fragmentAccountActionbarButtonMenu
+        menuNavView = binding.fragmentNavBottomAccountNavView
+        menuNavView.setNavigationItemSelectedListener(navigationViewItemSelectedListener())
+        navViewConstraintLayout = binding.fragmentNavBottomAccountNavViewConstraintLayout
+
+        /*
+        menuNavView.setOnClickListener { Log.i(TAG, "onViewCreated: ") }
+        binding.fragmentNavBottomAccountNavView.menu.findItem(R.id.navigation_drawer_menu_item_settings)
+            .setOnMenuItemClickListener {
+                Toast.makeText(requireContext(),"sdfjl",Toast.LENGTH_SHORT).show()
+                true
+            }*/
+
         // get account details
         val sharedPreferences = requireActivity().getSharedPreferences(
             SHARED_PREFERENCES_KEY,
@@ -95,8 +111,15 @@ class AccountNavigationFragment : Fragment() {
 
 
         // set Listener
-        listener = AccountNavigationFragmentEventListener(storageHelper, requireContext())
+        listener = AccountNavigationFragmentEventListener(
+            storageHelper,
+            requireContext(),
+            menuNavDrawerLayout,
+            menuNavView,
+            navViewConstraintLayout
+        )
         binding.listener = listener
+
 
         // file picker
         storageHelper.onFileSelected = onStorageHelperFileSelected()
@@ -104,8 +127,27 @@ class AccountNavigationFragment : Fragment() {
         // views
         accountProfilePictureImageView = binding.fragmentAccountImageView
         accountProfilePictureImageView.setOnClickListener(profilePicOnClickListener())
+    }
 
-
+    public fun navigationViewItemSelectedListener(): NavigationView.OnNavigationItemSelectedListener {
+        return NavigationView.OnNavigationItemSelectedListener {
+            if (menuNavDrawerLayout.isDrawerOpen(Gravity.RIGHT)) {
+                menuNavDrawerLayout.closeDrawer(Gravity.RIGHT);
+            } else {
+                menuNavDrawerLayout.openDrawer(Gravity.RIGHT);
+            }
+            Toast.makeText(requireContext(),it.title,Toast.LENGTH_SHORT).show()
+            when (it.itemId) {
+                R.id.navigation_drawer_menu_item_settings -> {
+                    Toast.makeText(requireContext(), "Clicked", Toast.LENGTH_SHORT).show()
+                    Navigation.findNavController(binding.root)
+                        .navigate(AccountNavigationFragmentDirections.actionAccountNavigationFragmentToSettingsNavDrawerFragment())
+//                    menuNavDrawerLayout.closeDrawer(menuNavDrawerLayout)
+                    menuNavDrawerLayout.closeDrawer(Gravity.RIGHT)
+                }
+            }
+            super.onOptionsItemSelected(it)
+        }
     }
 
     private fun profilePicOnClickListener(): View.OnClickListener {
@@ -180,8 +222,35 @@ class AccountNavigationFragment : Fragment() {
 
     public class AccountNavigationFragmentEventListener(
         val storageHelper: SimpleStorageHelper,
-        val context: Context
+        val context: Context,
+        val navigationDrawerLayout: DrawerLayout,
+        val menuNavDrawerView: NavigationView,
+        val navViewConstraintLayout: ConstraintLayout
     ) {
+
+        public fun navigationViewItemSelectedListener(menuItem: MenuItem): Boolean {
+            Log.i(TAG, "navigationViewItemSelectedListener: ")
+            Toast.makeText(context, "Clicked", Toast.LENGTH_SHORT).show()
+            when (menuItem.itemId) {
+                R.id.settingsNavDrawerFragment -> {
+                    Navigation.findNavController(menuItem as View)
+                        .navigate(AccountNavigationFragmentDirections.actionAccountNavigationFragmentToSettingsNavDrawerFragment())
+                    navigationDrawerLayout.closeDrawer(menuNavDrawerView)
+                }
+            }
+            return true
+        }
+
+        public fun menuButtonClickListener(view: View) {
+            navigationDrawerLayout.openDrawer(Gravity.RIGHT)
+            //navigationDrawerLayout.open()
+            /*
+                menuNavDrawerView.setNavigationItemSelectedListener {
+                    Log.i(TAG, "menuButtonClickListener: ")
+                    false
+                }*/
+        }
+
         public fun editButtonListener(view: View, accountDetailModel: AccountDetailModel) {
             val strings: Array<String?> = arrayOf(
                 accountDetailModel.getName(),
@@ -199,6 +268,7 @@ class AccountNavigationFragment : Fragment() {
 
         public fun onProfilePicClickListener(view: View) {
         }
+
     }
 
     public fun openSomeActivityForResult() {
@@ -253,11 +323,16 @@ class AccountNavigationFragment : Fragment() {
 
     private fun uploadProPicFileAfterChoosing(firstFile: File) {
 
-      val filePart: MultipartBody.Part = MultipartBody.Part.createFormData("file", firstFile.name, RequestBody.create(MediaType.parse("image/*"), firstFile));
+        val filePart: MultipartBody.Part = MultipartBody.Part.createFormData(
+            "file",
+            firstFile.name,
+            RequestBody.create(MediaType.parse("image/*"), firstFile)
+        );
 
         mainActivityViewModel.uploadPicture1(firstFile)
             .observe(viewLifecycleOwner, Observer {
-                Toast.makeText(requireContext(),"succeed ${it.data.file.url}",Toast.LENGTH_SHORT).show()
+                Toast.makeText(requireContext(), "succeed ${it.data.file.url}", Toast.LENGTH_SHORT)
+                    .show()
             })
 
     }
@@ -265,7 +340,7 @@ class AccountNavigationFragment : Fragment() {
     private fun uploadProfilePictureByFileStackObserver(): Observer<in UploadPicFileStackModel> {
         return Observer {
             Log.i(TAG, "uploadProfilePictureByFileStackObserver: ${it.url}")
-            Toast.makeText(requireContext(),"succeed",Toast.LENGTH_SHORT).show()
+            Toast.makeText(requireContext(), "succeed", Toast.LENGTH_SHORT).show()
             Glide.with(requireContext())
                 .load(it.url)
                 .into(accountProfilePictureImageView)

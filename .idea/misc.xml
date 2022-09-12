@@ -28,6 +28,14 @@
         <entry key="..\:/zpc/dev/workSpace/SaStore/app/src/main/res/layout/fragment_posts_item_details.xml" value="0.15775972637879435" />
         <entry key="..\:/zpc/dev/workSpace/SaStore/app/src/main/res/layout/post_shopping_item_layout.xml" value="0.15775972637879435" />
         <entry key="..\:/zpc/dev/workSpace/SaStore/app/src/main/res/layout/shopping_cart_item_layout.xml" value="0.14921223354958293" />
+        <entry key="app/src/main/res/drawable-v24/ic_baseline_fingerprint_24.xml" value="0.132" />
+        <entry key="app/src/main/res/drawable/ic_baseline_fingerprint_24.xml" value="0.132" />
+        <entry key="app/src/main/res/layout-v23/fragment_nav_bottom_account.xml" value="0.19583333333333333" />
+        <entry key="app/src/main/res/layout/fragment_log_in.xml" value="0.16075245831551946" />
+        <entry key="app/src/main/res/layout/fragment_nav_bottom_account.xml" value="0.11282051282051282" />
+        <entry key="app/src/main/res/layout/fragment_navdrawer_settings.xml" value="0.2" />
+        <entry key="app/src/main/res/menu/bottom_nav_menu.xml" value="0.16075245831551946" />
+        <entry key="app/src/main/res/menu/navigation_drawer_items_menu.xml" value="0.16075245831551946" />
       </map>
     </option>
   </component>

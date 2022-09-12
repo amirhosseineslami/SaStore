@@ -1,5 +1,6 @@
 package com.mintab.sastore.view
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.MenuItem
@@ -9,6 +10,7 @@ import androidx.navigation.fragment.NavHostFragment
 import com.mintab.sastore.R
 import com.mintab.sastore.databinding.ActivityMainBinding
 import com.google.android.material.navigation.NavigationBarView
+import com.mintab.sastore.worker.PrepareFingerprint
 
 class MainActivity : AppCompatActivity(), NavigationBarView.OnItemSelectedListener {
     lateinit var activityMainBinding: ActivityMainBinding
@@ -17,9 +19,16 @@ class MainActivity : AppCompatActivity(), NavigationBarView.OnItemSelectedListen
         super.onCreate(savedInstanceState)
         activityMainBinding = DataBindingUtil.setContentView(this, R.layout.activity_main)
         activityMainBinding.mainActivityBottomNav.setOnItemSelectedListener(this)
-        var navHostFragment =
+        val navHostFragment =
             supportFragmentManager.findFragmentById(R.id.fragmentContainerView_main_activity) as NavHostFragment
         navController = navHostFragment.navController
+
+
+        val sharedPreferences = getSharedPreferences(SHARED_PREFERENCES_KEY, MODE_PRIVATE)
+        if (sharedPreferences.getString(SHARED_PREFERENCES_EXTRA_NUMBER_KEY, null) != null && sharedPreferences.getBoolean(
+                SHARED_PREFERENCES_BIOMETRIC_FINGERPRINT_KEY,false)) {
+            PrepareFingerprint(this, true, null).ActivateFingerprint()
+        }
 
     }
 

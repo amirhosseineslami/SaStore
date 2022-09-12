@@ -27,6 +27,9 @@
             app:exitAnim="@anim/nav_default_exit_anim"
             app:popEnterAnim="@anim/nav_default_pop_enter_anim"
             app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+        <action
+            android:id="@+id/action_accountNavigationFragment_to_settingsNavDrawerFragment"
+            app:destination="@id/settingsNavDrawerFragment" />
     </fragment>
     <fragment
         android:id="@+id/postsItemDetailsFragment"
@@ -44,4 +47,8 @@
             android:name="parameters"
             app:argType="string[]" />
     </fragment>
+    <fragment
+        android:id="@+id/settingsNavDrawerFragment"
+        android:name="com.mintab.sastore.view.SettingsNavDrawerFragment"
+        android:label="SettingsNavDrawerFragment" />
 </navigation>

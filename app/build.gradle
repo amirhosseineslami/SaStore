@@ -1,4 +1,3 @@
-
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
@@ -127,10 +126,10 @@ dependencies {
 
     // file picker
     implementation "com.anggrayudi:storage:1.4.1"
-        implementation 'com.github.deepanshuDPS:AndroidFilePicker:1.0.1'
+    implementation 'com.github.deepanshuDPS:AndroidFilePicker:1.0.1'
 
-
-
+    // biometric
+    implementation("androidx.biometric:biometric:1.2.0-alpha04")
 
 
 }

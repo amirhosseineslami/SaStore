@@ -94,8 +94,6 @@ interface Api {
 
 
 
-
-
     @Headers("Content-Type: image/jpeg")
     @POST("S3")
     public fun uploadPictureByFileStack(
