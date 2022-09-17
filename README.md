@@ -13,3 +13,5 @@ In this project i've used:
 5.Firebase storage
 
 6.Databinding
+
+7.MVVM architecture
